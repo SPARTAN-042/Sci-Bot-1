@@ -4,7 +4,7 @@ const Command = require('./Command.js');
 
 const Event = require('./Event.js');
 
-const config = require('../config.json');
+// const config = require('../config.json');
 
 const intents = new Discord.Intents(32767);
 
@@ -21,7 +21,7 @@ class Client extends Discord.Client {
          */
 		this.commands = new Discord.Collection();
 
-		this.prefix = config.prefix;
+		this.prefix = process.env.PREFIX;
 	}
 
 	start(token) {

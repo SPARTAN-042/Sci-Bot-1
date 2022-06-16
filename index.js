@@ -9,11 +9,11 @@ const {
 const Client = require('./structures/Client.js');
 const Command = require('./structures/Command.js');
 
-const config = require('./config.json');
+// const config = require('./config.json');
 
 const client = new Client();
 
-client.start(config.token);
+client.start(process.env.BOT_TOKEN);
 
 // const bruh = function() {
 // 	return client.api.applications(config.clientId).commands.get();
