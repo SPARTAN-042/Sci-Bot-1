@@ -26,4 +26,8 @@ class Command {
 	}
 }
 
-module.exports = Command;
+module.exports = {
+	RunFunction(message, args, client) {
+		Command;
+	},
+};
