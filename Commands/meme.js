@@ -8,7 +8,7 @@ module.exports = new Command({
 	name: 'meme',
 	description: 'Generate a meme!',
 
-	execute(message, args) {
+	async run(message, args, client) {
 
 		https.get(url, (result) => {
 			let body = '';
