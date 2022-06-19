@@ -29,7 +29,7 @@ module.exports = new Command({
 						.setDescription(`[${title}](${link})\n\n${text}`)
 						.setURL(`https://reddit.com/${subRedditName}`);
 
-					message.channel.send(textembed);
+					message.channel.send({ embeds: [textembed] });
 				}
 
 				const image = index.preview.images[0].source.url.replace('&amp;', '&');
@@ -45,7 +45,7 @@ module.exports = new Command({
 						.setDescription(`[${title}](${link})\n\n${text}`)
 						.setURL(`https://reddit.com/${subRedditName}`);
 
-					message.channel.send(textembed);
+					message.channel.send({ embeds: [textembed] });
 				}
 				console.log(image);
 				const imageembed = new Discord.MessageEmbed()
@@ -54,7 +54,7 @@ module.exports = new Command({
 					.setColor(9384170)
 					.setDescription(`[${title}](${link})`)
 					.setURL(`https://reddit.com/${subRedditName}`);
-				message.channel.send(imageembed);
+				message.channel.send({ embeds: [imageembed] });
 			}).on('error', function(e) {
 				console.log('Got an error: ', e);
 			});
