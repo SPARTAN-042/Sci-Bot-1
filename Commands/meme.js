@@ -1,7 +1,7 @@
 const Command = require('../structures/Command.js');
 const Discord = require('discord.js');
 const https = require('https');
-const url = 'https://www.reddit.com/r/meme/hot/.json?limit=100';
+const url = 'https://www.reddit.com/r/meme/top/.json?limit=100';
 
 
 module.exports = new Command({
