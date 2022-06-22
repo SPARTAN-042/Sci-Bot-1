@@ -25,6 +25,8 @@ module.exports = new Command({
                 const response = JSON.parse(body);
                 console.log(`Response: ${response}`);
 
+                const image = getCharacter; // test
+
 				const getCharacter = `${url}${randChar}`;
                 const getName = getCharacter;
 
@@ -32,15 +34,12 @@ module.exports = new Command({
 
 
 				const text = '';
-				const textembed = new Discord.MessageEmbed()
+				const imageembed = new Discord.MessageEmbed()
 					.setTitle('Waltar') // name
+                    .setImage(image)
 					.setColor('#2c5717')
-					.setDescription(`['test']('test')\n\n${text}`) // quote
-					.setURL(`${getCharacter}`); // character image
-
-				message.channel.send({
-					embeds: [textembed],
-				});
+					.setDescription(`['test']('test')\n\n${text}`); // quote
+                message.channel.send({ embeds: [imageembed] });
 			}).on('error', function(e) {
 				console.log('Got an error: ', e);
 			});
