@@ -23,8 +23,9 @@ module.exports = new Command({
 
 			result.on('end', () => {
                 const response = JSON.parse(body);
+                console.log(`Response: ${response}`);
 
-				const getCharacter = '';
+				const getCharacter = `${url}${randChar}`;
                 const getName = getCharacter;
 
                 const getQuote = '';
@@ -34,8 +35,8 @@ module.exports = new Command({
 				const textembed = new Discord.MessageEmbed()
 					.setTitle('Waltar') // name
 					.setColor('#2c5717')
-					.setDescription(`['test']]('test')\n\n${text}`) // quote
-					.setURL(`${url}`); // character image
+					.setDescription(`['test']('test')\n\n${text}`) // quote
+					.setURL(`${getCharacter}`); // character image
 
 				message.channel.send({
 					embeds: [textembed],
