@@ -32,7 +32,7 @@ module.exports = new Command({
 
 				const text = '';
 				const textembed = new Discord.MessageEmbed()
-					.setTitle() // name
+					.setTitle('Waltar') // name
 					.setColor('#2c5717')
 					.setDescription(`['test']]('test')\n\n${text}`) // quote
 					.setURL(`${url}`); // character image
