@@ -25,13 +25,13 @@ module.exports = new Command({
                 const response = JSON.parse(body);
                 console.log(`Response: ${response}`);
 
-                const image = getCharacter; // test
-
+                
 				const getCharacter = `${url}${randChar}`;
                 const getName = getCharacter;
 
                 const getQuote = '';
 
+                const image = getCharacter; // test
 
 				const text = '';
 				const imageembed = new Discord.MessageEmbed()
