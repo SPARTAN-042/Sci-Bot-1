@@ -23,8 +23,6 @@ module.exports = new Command({
 
 			result.on('end', () => {
                 const response = JSON.parse(body);
-                console.log(`Response: ${response}`);
-
                 
 				const getCharacter = `${url}${randChar}`;
                 const getName = getCharacter;
@@ -33,12 +31,12 @@ module.exports = new Command({
 
                 const image = getCharacter; // test
 
-				const text = '';
+				const text = 'Jesse, we need to cook';
 				const imageembed = new Discord.MessageEmbed()
 					.setTitle('Waltar') // name
-                    .setImage('https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg')
+                    .setImage() // image
 					.setColor('#2c5717')
-					.setDescription(`['test']('test')\n\n${text}`); // quote
+					.setDescription(`${text}`); // quote
                 message.channel.send({ embeds: [imageembed] });
 			}).on('error', function(e) {
 				console.log('Got an error: ', e);
