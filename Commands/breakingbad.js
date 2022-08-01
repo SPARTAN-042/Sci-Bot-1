@@ -34,7 +34,7 @@ module.exports = new Command({
 				const text = 'Jesse, we need to cook';
 				const imageembed = new Discord.MessageEmbed()
 					.setTitle('Waltar') // name
-                    .setImage() // image
+                    .setImage('https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg') // image
 					.setColor('#2c5717')
 					.setDescription(`${text}`); // quote
                 message.channel.send({ embeds: [imageembed] });
