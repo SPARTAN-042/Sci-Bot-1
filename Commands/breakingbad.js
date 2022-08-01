@@ -6,11 +6,11 @@ const Discord = require('discord.js');
 const https = require('https');
 const url = 'https://www.breakingbadapi.com/api/';
 const randChar = 'character/random';
-const randQuote = 'random?author=';
+const randQuote = 'quote/random?author=';
 
 
 module.exports = new Command({
-	name: 'breaking-bad',
+	name: 'bb',
 	description: 'Breaking bad funny',
 
 	async run(message, args, client) {
@@ -23,20 +23,19 @@ module.exports = new Command({
 
 			result.on('end', () => {
                 const response = JSON.parse(body);
+
+				const randCharQuote = response[0].quote;
+				const randCharImg = response[0].img;
+				const randCharName = response[0].name;
                 
 				const getCharacter = `${url}${randChar}`;
-                const getName = getCharacter;
-
-                const getQuote = '';
-
-                const image = getCharacter; // test
-
-				const text = 'Jesse, we need to cook';
+                const getQuote = `${url}${randQuote}${randCharQuote}`; // quote/random?author=
 				const imageembed = new Discord.MessageEmbed()
-					.setTitle('Waltar') // name
-                    .setImage('https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg') // image
+
+					.setTitle(`${getCharacter}${randCharName}`) // name
+                    .setImage(`${randCharImg}`) // image
 					.setColor('#2c5717')
-					.setDescription(`${text}`); // quote
+					.setDescription(`${getQuote}`); // quote
                 message.channel.send({ embeds: [imageembed] });
 			}).on('error', function(e) {
 				console.log('Got an error: ', e);
