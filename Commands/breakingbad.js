@@ -4,7 +4,7 @@
 const Command = require('../structures/Command.js');
 const Discord = require('discord.js');
 const https = require('https');
-const url = 'https://www.breakingbadapi.com/api/';
+const url = 'https://www.breakingbadapi.com/api/quote/random?author=Walter+White';
 const randChar = 'character/random';
 const randQuote = 'quote/random?author=';
 
@@ -25,13 +25,13 @@ module.exports = new Command({
                 const response = JSON.parse(body);
 
 				const randCharQuote = response[0].quote;
+				console.log(randCharQuote); //
 				const randCharImg = response[0].img;
 				const randCharName = response[0].name;
                 
 				const getCharacter = `${url}${randChar}`;
                 const getQuote = `${url}${randQuote}${randCharQuote}`; // quote/random?author=
 				const imageembed = new Discord.MessageEmbed()
-
 					.setTitle(`${getCharacter}${randCharName}`) // name
                     .setImage(`${randCharImg}`) // image
 					.setColor('#2c5717')
