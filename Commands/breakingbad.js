@@ -4,7 +4,7 @@
 const Command = require('../structures/Command.js');
 const Discord = require('discord.js');
 const https = require('https');
-const url = 'https://www.breakingbadapi.com/api/quote/random?author=Walter+White';
+const url = 'https://www.breakingbadapi.com/api/quote/random?author=';
 const randChar = 'character/random';
 const randQuote = 'quote/random?author=';
 
@@ -25,6 +25,7 @@ module.exports = new Command({
                 const response = JSON.parse(body);
 
 				const randCharQuote = response[0].quote;
+				randCharQuote.parse(body);
 				console.log(randCharQuote); //
 				const randCharImg = response[0].img;
 				const randCharName = response[0].name;
