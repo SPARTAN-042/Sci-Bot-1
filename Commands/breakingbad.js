@@ -2,9 +2,8 @@
 /* eslint-disable indent */
 /* eslint-disable no-trailing-spaces */
 const Command = require('../structures/Command.js');
-import discord from 'discord.js';
-import fetch from 'node-fetch';
-import https from 'https';
+const Discord = require('discord.js');
+const https = require('https');
 const baseUrl = 'https://www.breakingbadapi.com/api/';
 const charUrl = 'https://www.breakingbadapi.com/api/character/random';
 const quoteUrl = 'https://www.breakingbadapi.com/api/quote/random?author=';
@@ -47,9 +46,7 @@ module.exports = new Command({
 
 		// });
 		
-		fetch('https://google.com')
-			.then(res => res.text())
-			.then(text => console.log(text));
+		
 	},
 
 });
