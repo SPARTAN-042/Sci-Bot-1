@@ -18,7 +18,7 @@ module.exports = new Command({
 
 	async run(message, args, client) {
 
-		https.get(url, (result) => {
+		https.get(baseUrl, (result) => {
 			let body = '';
 			result.on('data', (chunk) => {
 				body += chunk;
