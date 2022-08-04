@@ -18,33 +18,33 @@ module.exports = new Command({
 
 	async run(message, args, client) {
 
-		// https.get(url, (result) => {
-		// 	let body = '';
-		// 	result.on('data', (chunk) => {
-		// 		body += chunk;
-		// 	});
+		https.get(url, (result) => {
+			let body = '';
+			result.on('data', (chunk) => {
+				body += chunk;
+			});
 
-		// 	result.on('end', () => {
-        //         const response = JSON.parse(body);
+			result.on('end', () => {
+                const response = JSON.parse(body);
 
-		// 		const randCharQuote = response[0].quote;
-		// 		console.log(randCharQuote); //
-		// 		const randCharImg = response[0].img;
-		// 		const randCharName = response[0].name;
+				const randCharQuote = response[0].quote;
+				console.log(randCharQuote); //
+				const randCharImg = response[0].img;
+				const randCharName = response[0].name;
                 
-		// 		const getCharacter = `${url}${randChar}`;
-        //         const getQuote = `${url}${randQuote}${randCharQuote}`; // quote/random?author=
-		// 		const imageembed = new Discord.MessageEmbed()
-		// 			.setTitle(`${getCharacter}${randCharName}`) // name
-        //             .setImage(`${randCharImg}`) // image
-		// 			.setColor('#2c5717')
-		// 			.setDescription(`${getQuote}`); // quote
-        //         message.channel.send({ embeds: [imageembed] });
-		// 	}).on('error', function(e) {
-		// 		console.log('Got an error: ', e);
-		// 	});
+				const getCharacter = `${url}${randChar}`;
+                const getQuote = `${url}${randQuote}${randCharQuote}`; // quote/random?author=
+				const imageembed = new Discord.MessageEmbed()
+					.setTitle(`${getCharacter}${randCharName}`) // name
+                    .setImage(`${randCharImg}`) // image
+					.setColor('#2c5717')
+					.setDescription(`${getQuote}`); // quote
+                message.channel.send({ embeds: [imageembed] });
+			}).on('error', function(e) {
+				console.log('Got an error: ', e);
+			});
 
-		// });
+		});
 		
 		
 	},
